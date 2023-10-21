@@ -1,16 +1,18 @@
 package com.example.crud.config;
+
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.servers.Server;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
 
 @Configuration
-public class CorsConfig implements WebMvcConfigurer {
+public class CorsConfig {
 
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
-                .allowedOrigins("*")
-                .allowedHeaders("*")
-                .allowedMethods("GET", "PUT", "POST", "PATCH", "DELETE", "OPTIONS");
+    @Bean
+    public OpenAPI customOpenAPI() {
+        return new OpenAPI().addServersItem(new Server().url("https://api-alunos-production.up.railway.app/swagger-ui/index.html#/"))
+                .addServersItem(new Server().url("http://localhost:8080"));
     }
 
 }
