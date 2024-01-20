@@ -41,7 +41,7 @@ Este repositório contém uma API desenvolvida em Java usando o framework Spring
 
 A documentação interativa da API pode ser acessada em:
 
-[http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+[http://api-alunos-production.up.railway.app/swagger-ui/index.html](http://api-alunos-production.up.railway.app/swagger-ui/index.html)
 
 ## Exemplos de Requisições
 
